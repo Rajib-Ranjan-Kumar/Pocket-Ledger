@@ -62,9 +62,19 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.material.icons.extended)
 
-    //room database
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    kapt(libs.androidx.room.compiler) // for annotation processing
+
+
+    // ✅ Room runtime
+    implementation("androidx.room:room-runtime:2.6.1")
+
+    // ✅ Room compiler (annotation processor for @Dao, @Entity, etc.)
+    kapt("androidx.room:room-compiler:2.6.1")
+
+    // ✅ Room Kotlin extensions + Coroutines support (for suspend + Flow)
+    implementation("androidx.room:room-ktx:2.6.1")
+
+    // ✅ Coroutines (for suspend functions and Flow)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
 }
