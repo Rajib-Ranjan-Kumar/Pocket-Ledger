@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.pocketledger.screen.HomeScreen
+import com.example.pocketledger.viewmodel.ExpenseViewModel
 //import com.gana.pocketledger.ui.screens.*
 //import com.gana.pocketledger.viewmodel.ExpenseViewModel
 import com.google.android.libraries.intelligence.acceleration.Analytics
@@ -30,7 +31,7 @@ sealed class Screen(val route: String, val title: String, val icon: androidx.com
 @Composable
 fun PocketLedgerApp() {
     val navController = rememberNavController()
-    //val expenseViewModel: ExpenseViewModel = viewModel()
+    val expenseViewModel: ExpenseViewModel = viewModel()
 
     Scaffold(
         bottomBar = {
@@ -69,7 +70,7 @@ fun PocketLedgerApp() {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.Home.route) { HomeScreen(
-               // expenseViewModel
+                expenseViewModel
             ) }
 //            composable(Screen.AddExpense.route) { AddExpenseScreen(expenseViewModel) }
 //            composable(Screen.Reports.route) { ReportsScreen(expenseViewModel) }

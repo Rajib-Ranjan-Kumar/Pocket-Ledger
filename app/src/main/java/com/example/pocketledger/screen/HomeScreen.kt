@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pocketledger.viewmodel.ExpenseViewModel
 //import com.gana.pocketledger.data.Expense
 //import com.gana.pocketledger.viewmodel.ExpenseViewModel
 import java.text.SimpleDateFormat
@@ -22,11 +23,11 @@ import java.util.*
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    //viewModel: ExpenseViewModel
+    viewModel: ExpenseViewModel
 ) {
-//    val expenses by viewModel.expenses.collectAsState()
-//    val totalSpent by viewModel.totalSpent.collectAsState()
-//    val monthlyBudget by viewModel.monthlyBudget.collectAsState()
+   val expenses by viewModel.expenses.collectAsState()
+   val totalSpent by viewModel.totalSpent.collectAsState()
+   val monthlyBudget by viewModel.monthlyBudget.collectAsState()
 
     Column(
         modifier = Modifier
@@ -64,17 +65,13 @@ fun HomeScreen(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
-                        text = "$${String.format("%.2f", 
-                            0.0 //totalSpent
-                        )}",
+                        text = "$${String.format("%.2f", totalSpent)}",
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                     Text(
-                        text = "$${String.format("%.2f", 
-                            0.0f//monthlyBudget
-                        )}",
+                        text = "$${String.format("%.2f", monthlyBudget)}",
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
                     )

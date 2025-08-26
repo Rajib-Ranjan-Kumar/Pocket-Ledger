@@ -19,6 +19,7 @@ data class Expense(
     val groupId: String? = null
 )
 
+
 @Entity(tableName = "categories")
 data class Category(
     @PrimaryKey val id: String = UUID.randomUUID().toString(),
@@ -26,6 +27,7 @@ data class Category(
     val icon: String,
     val color: String
 )
+@Entity(tableName = "groups")
 data class Group(
     @PrimaryKey val id: String = UUID.randomUUID().toString(),
     val name: String,
