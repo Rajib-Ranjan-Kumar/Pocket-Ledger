@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pocketledger.util.ExpenseItem
 import com.example.pocketledger.viewmodel.ExpenseViewModel
 //import com.gana.pocketledger.data.Expense
 //import com.gana.pocketledger.viewmodel.ExpenseViewModel
@@ -95,15 +96,15 @@ fun HomeScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-//        LazyColumn(
-//            verticalArrangement = Arrangement.spacedBy(8.dp)
-//        ) {
-//            items(expenses) { expense ->
-//                ExpenseItem(
-//                    expense = expense,
-//                    onDelete = { viewModel.deleteExpense(expense) }
-//                )
-//            }
-//        }
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            items(expenses) { expense ->
+                ExpenseItem(
+                    expense = expense,
+                    onDelete = { viewModel.deleteExpense(expense) }
+                )
+            }
+        }
     }
 }
