@@ -15,6 +15,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.pocketledger.screen.AddExpenseScreen
 import com.example.pocketledger.screen.HomeScreen
+import com.example.pocketledger.screen.ReportsScreen
 import com.example.pocketledger.viewmodel.ExpenseViewModel
 //import com.gana.pocketledger.ui.screens.*
 //import com.gana.pocketledger.viewmodel.ExpenseViewModel
@@ -74,7 +75,7 @@ fun PocketLedgerApp() {
                 expenseViewModel
             ) }
             composable(Screen.AddExpense.route) { AddExpenseScreen(expenseViewModel) }
-//            composable(Screen.Reports.route) { ReportsScreen(expenseViewModel) }
+           composable(Screen.Reports.route) { ReportsScreen(expenseViewModel) }
 //            composable(Screen.Groups.route) { GroupsScreen() }
 //            composable(Screen.Profile.route) { ProfileScreen() }
         }
